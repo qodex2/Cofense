@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+*.tlog
+*.idb
+*.pdb
+*.lastbuildstate
+*.suo
+*.db
+*.ipch
+*.ilk
+*.user
