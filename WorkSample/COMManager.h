@@ -4,11 +4,11 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 //
-//       CLASS: TaskScheduler
+//       CLASS: COMManager
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: See TaskScheduler.cpp
+// DESCRIPTION: See COMManager.cpp
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -18,16 +18,12 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #pragma once
-
-#include <MSTask.h>
-#include "Task.h"
-
-class TaskScheduler
+class COMManager
 {
 public:
-	static void Save(Task& task);
-	static void Delete(Task& task);
-	static void CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& task);
-	static void CheckReturnCode(HRESULT hr, const char* message);
+	COMManager();
+	~COMManager();
+private:
+	bool initialized;
 };
 

@@ -8,10 +8,7 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: Extend the MSTask TASK_TRIGGER struct.  Provide three
-//				ctors to initialize the struct, either with or without
-//				an end time.  A trigger type is optional.  Provide setters 
-//				for flags and trigger type.
+// DESCRIPTION: See Trigger.cpp
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description

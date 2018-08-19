@@ -8,7 +8,7 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: 
+// DESCRIPTION: See Task.cpp
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -27,37 +27,41 @@ class Task
 {
 public:
 	Trigger GetTrigger() { return MyTrigger; }
-	std::string GetProgramPath() { return ProgramPath; }
-	std::string GetParameters() { return Parameters; }
-	std::string GetStartingDir() { return StartingDir; }
-	std::string GetTUsername() { return Username; }
-	std::string GetPassword() { return Password; }
-	std::string GetComment() { return Comment; }
+	std::wstring GetTaskName() { return TaskName; }
+	std::wstring GetProgramPath() { return ProgramPath; }
+	std::wstring GetParameters() { return Parameters; }
+	std::wstring GetStartingDir() { return StartingDir; }
+	std::wstring GetComment() { return Comment; }
+	DWORD GetFlags() { return Flags; }
+
+	void SetDefaultTrigger();
+	void SetUuidTaskName();
+	void SetFlags();
 
 	void SetTrigger(Trigger value);
-	void SetProgramPath(std::string value);
-	void SetParameters(std::string value);
-	void SetDirectory(std::string value);
-	void SetUsername(std::string value);
-	void SetPassword(std::string value);
-	void SetComment(std::string value);
+	void SetTaskName(std::wstring value);
+	void SetProgramPath(std::wstring value);
+	void SetParameters(std::wstring value);
+	void SetDirectory(std::wstring value);
+	void SetComment(std::wstring value);
+	void SetFlags(DWORD value);
 
 protected:
-	// Necessary methods, but implementation beyond the scope of this exercise.
-	bool ValidProgramPath(std::string value) { return true; }
-	bool ValidParameters(std::string value) { return true; }
-	bool ValidDirectory(std::string value) { return true; }
-	bool ValidUsername(std::string value) { return true; }
-	bool ValidPassword(std::string value) { return true; }
-	bool ValidComment(std::string value) { return true; }
+	// Necessary methods, but implementation mostly beyond the scope of this exercise.
+	bool ValidTaskName(std::wstring value) { return value.length() > 0; }
+	bool ValidProgramPath(std::wstring value) { return value.length() > 0; }
+	bool ValidParameters(std::wstring value) { return true; }
+	bool ValidDirectory(std::wstring value) { return true; }
+	bool ValidComment(std::wstring value) { return true; }
+	bool ValidFlags(DWORD value) { return true; }
 
 private:
 	Trigger MyTrigger;
-	std::string ProgramPath;
-	std::string Parameters;
-	std::string StartingDir;
-	std::string Username;
-	std::string Password;
-	std::string Comment;
+	std::wstring TaskName;
+	std::wstring ProgramPath;
+	std::wstring Parameters;
+	std::wstring StartingDir;
+	std::wstring Comment;
+	DWORD Flags;
 };
 

@@ -4,11 +4,11 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 //
-//       CLASS: TaskScheduler
+//       CLASS: TaskException
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: See TaskScheduler.cpp
+// DESCRIPTION: See TaskException.cpp
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -18,16 +18,16 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include <stdexcept>
+#include <string>
 
-#include <MSTask.h>
-#include "Task.h"
-
-class TaskScheduler
+class TaskException : public std::exception
 {
 public:
-	static void Save(Task& task);
-	static void Delete(Task& task);
-	static void CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& task);
-	static void CheckReturnCode(HRESULT hr, const char* message);
+	TaskException(char const* const message);
+	TaskException(std::wstring message);
+	virtual ~TaskException() { }
+private:
+	std::string Convert(std::wstring message);
 };
 

@@ -33,6 +33,12 @@
     <ClInclude Include="TaskException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="COMManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -51,6 +57,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COMManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

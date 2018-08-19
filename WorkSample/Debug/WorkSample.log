@@ -1,0 +1,148 @@
+﻿  Task.cpp
+  TaskScheduler.cpp
+r:\cofense\worksample\taskscheduler.cpp(84): error C3867: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::length': non-standard syntax; use '&' to create a pointer to member
+r:\cofense\worksample\taskscheduler.cpp(84): error C2296: '>': illegal, left operand has type 'unsigned int (__thiscall std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::* )(void) noexcept const'
+r:\cofense\worksample\taskscheduler.cpp(84): error C2297: '>': illegal, right operand has type 'unsigned int (__thiscall std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::* )(void) noexcept const'
+r:\cofense\worksample\taskscheduler.cpp(86): error C2065: 'm_sParameters': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(90): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(92): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(98): error C2065: 'm_sStartingDir': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(98): error C2228: left of '.GetLength' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(98): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(100): error C2065: 'm_sStartingDir': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(104): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(106): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(112): error C2065: 'm_bNT': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(114): error C2065: 'm_sAccount': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(115): error C2065: 'm_sPassword': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(114): error C2660: 'IScheduledWorkItem::SetAccountInformation': function does not take 1 arguments
+r:\cofense\worksample\taskscheduler.cpp(119): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(121): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(127): error C2065: 'm_sComment': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(127): error C2228: left of '.GetLength' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(127): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(129): error C2065: 'm_sComment': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(133): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(135): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(155): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(157): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(166): error C3861: 'TRACE1': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(168): error C2562: 'TaskScheduler::Save': 'void' function returning a value
+  r:\cofense\worksample\taskscheduler.cpp(34): note: see declaration of 'TaskScheduler::Save'
+r:\cofense\worksample\taskscheduler.cpp(174): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(176): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(176): error C2228: left of '.cbTriggerSize' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(176): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(177): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(177): error C2228: left of '.wBeginYear' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(177): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(177): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(177): error C2228: left of '.wYear' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(177): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(178): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(178): error C2228: left of '.wBeginMonth' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(178): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(178): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(178): error C2228: left of '.wMonth' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(178): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(179): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(179): error C2228: left of '.wBeginDay' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(179): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(179): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(179): error C2228: left of '.wDay' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(179): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(180): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(180): error C2228: left of '.wStartHour' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(180): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(180): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(180): error C2228: left of '.wHour' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(180): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(181): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(181): error C2228: left of '.wStartMinute' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(181): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(181): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(181): error C2228: left of '.wMinute' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(181): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(183): error C2065: 'm_timeEnd': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(183): error C2228: left of '.wYear' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(183): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(185): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(185): error C2228: left of '.rgFlags' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(185): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(186): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(186): error C2228: left of '.wEndYear' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(186): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(186): error C2065: 'm_timeEnd': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(186): error C2228: left of '.wYear' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(186): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(187): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(187): error C2228: left of '.wEndMonth' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(187): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(187): error C2065: 'm_timeEnd': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(187): error C2228: left of '.wMonth' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(187): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(188): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(188): error C2228: left of '.wEndDay' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(188): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(188): error C2065: 'm_timeEnd': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(188): error C2228: left of '.wDay' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(188): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(192): error C2065: 'm_eFreq': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(193): error C2050: switch expression not integral
+r:\cofense\worksample\taskscheduler.cpp(194): error C2065: 'freqOnce': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(194): error C2131: expression did not evaluate to a constant
+  r:\cofense\worksample\taskscheduler.cpp(194): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  r:\cofense\worksample\taskscheduler.cpp(194): note: see usage of 'freqOnce'
+r:\cofense\worksample\taskscheduler.cpp(195): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(195): error C2228: left of '.TriggerType' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(195): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(198): error C2065: 'freqDaily': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(198): error C2131: expression did not evaluate to a constant
+  r:\cofense\worksample\taskscheduler.cpp(198): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  r:\cofense\worksample\taskscheduler.cpp(198): note: see usage of 'freqDaily'
+r:\cofense\worksample\taskscheduler.cpp(199): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(199): error C2228: left of '.TriggerType' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(199): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(202): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(202): error C2228: left of '.Type' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(202): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(202): error C2228: left of '.Daily' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(202): error C2228: left of '.DaysInterval' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(205): error C2065: 'freqWeekly': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(205): error C2131: expression did not evaluate to a constant
+  r:\cofense\worksample\taskscheduler.cpp(205): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  r:\cofense\worksample\taskscheduler.cpp(205): note: see usage of 'freqWeekly'
+r:\cofense\worksample\taskscheduler.cpp(206): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(206): error C2228: left of '.TriggerType' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(206): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(208): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(208): error C2228: left of '.Type' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(208): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(208): error C2228: left of '.Weekly' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(208): error C2228: left of '.rgfDaysOfTheWeek' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(209): error C2065: 'm_timeStart': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(209): error C3861: 'GetDayOfWeekFlag': identifier not found
+r:\cofense\worksample\taskscheduler.cpp(212): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(212): error C2228: left of '.Type' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(212): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(212): error C2228: left of '.Weekly' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(212): error C2228: left of '.WeeksInterval' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(216): error C2065: 'freqMonthly': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(216): error C2131: expression did not evaluate to a constant
+  r:\cofense\worksample\taskscheduler.cpp(216): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  r:\cofense\worksample\taskscheduler.cpp(216): note: see usage of 'freqMonthly'
+r:\cofense\worksample\taskscheduler.cpp(217): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(217): error C2228: left of '.TriggerType' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(217): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(219): error C2065: 'rTrigger': undeclared identifier
+r:\cofense\worksample\taskscheduler.cpp(219): error C2228: left of '.Type' must have class/struct/union
+  r:\cofense\worksample\taskscheduler.cpp(219): note: type is 'unknown-type'
+r:\cofense\worksample\taskscheduler.cpp(219): error C2228: left of '.MonthlyDate' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(219): error C2228: left of '.rgfDays' must have class/struct/union
+r:\cofense\worksample\taskscheduler.cpp(219): fatal error C1003: error count exceeds 100; stopping compilation
+  Generating Code...
