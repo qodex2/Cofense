@@ -23,6 +23,8 @@
 #include "Trigger.h"
 #include "TaskException.h"
 
+#pragma comment(lib, "Rpcrt4.lib")
+
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: SetDefaultTrigger
 //              =================

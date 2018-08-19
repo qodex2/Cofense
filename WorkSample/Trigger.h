@@ -29,5 +29,8 @@ struct Trigger : TASK_TRIGGER
 	virtual ~Trigger() { }
 	void SetFlags(const DWORD flags) { rgFlags = flags; }
 	void SetTriggerType(const TASK_TRIGGER_TYPE triggerType) { TriggerType = triggerType; }
+	void FinalizeTypeFields();
+	void SetDayOfWeek();
+	void SetMonths();
 };
 

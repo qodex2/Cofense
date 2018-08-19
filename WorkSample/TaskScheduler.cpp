@@ -34,22 +34,20 @@
 ///////////////////////////////////////////////////////////////////////////
 void TaskScheduler::Save(Task& task)
 {
-ResourceManager& RM = *(new ResourceManager());
-HRESULT          hr;
-//TASK_TRIGGER     rTrigger;
-DWORD            taskFlags;
-WORD             trigNumber;
+	ResourceManager& RM = *(new ResourceManager());
+	HRESULT hr;
+	WORD trigNumber;
 
-USES_CONVERSION;
+	USES_CONVERSION;
 
-// Create an instance of the TaskScheduler, get the ITaskScheduler interface.
-hr = CoCreateInstance(
-	CLSID_CTaskScheduler,
-	NULL,
-	CLSCTX_INPROC_SERVER,
-	IID_ITaskScheduler,
-	(void **)&RM.pITaskScheduler);
-CheckReturnCode(hr, "COM instance creation failed");
+	// Create an instance of the TaskScheduler, get the ITaskScheduler interface.
+	hr = CoCreateInstance(
+		CLSID_CTaskScheduler,
+		NULL,
+		CLSCTX_INPROC_SERVER,
+		IID_ITaskScheduler,
+		(void **)&RM.pITaskScheduler);
+	CheckReturnCode(hr, "COM instance creation failed");
 
 	CheckForExistingTask(RM.pITaskScheduler, task);
 
@@ -95,70 +93,17 @@ CheckReturnCode(hr, "COM instance creation failed");
 	hr = RM.pITask->SetFlags(task.GetFlags());
 	CheckReturnCode(hr, "Failed to set flags");
 
-
 	// Create a trigger, to be populated below.
 	hr = RM.pITask->CreateTrigger(&trigNumber, &RM.pITaskTrigger);
 	CheckReturnCode(hr, "Failed to create trigger");
 
+	// Prepare the trigger.
 	Trigger trigger = task.GetTrigger();
-
-	//ZeroMemory(&rTrigger, sizeof(TASK_TRIGGER));
-
-	//rTrigger.cbTriggerSize = sizeof(TASK_TRIGGER);
-	//rTrigger.wBeginYear = m_timeStart.wYear;
-	//rTrigger.wBeginMonth = m_timeStart.wMonth;
-	//rTrigger.wBeginDay = m_timeStart.wDay;
-	//rTrigger.wStartHour = m_timeStart.wHour;
-	//rTrigger.wStartMinute = m_timeStart.wMinute;
-
-	//if (0 != m_timeEnd.wYear)
-	//{
-	//	rTrigger.rgFlags = TASK_TRIGGER_FLAG_HAS_END_DATE;
-	//	rTrigger.wEndYear = m_timeEnd.wYear;
-	//	rTrigger.wEndMonth = m_timeEnd.wMonth;
-	//	rTrigger.wEndDay = m_timeEnd.wDay;
-	//}
-
-
-	switch (m_eFreq)
-	{
-	case freqOnce:
-		rTrigger.TriggerType = TASK_TIME_TRIGGER_ONCE;
-		break;
-
-	case freqDaily:
-		rTrigger.TriggerType = TASK_TIME_TRIGGER_DAILY;
-
-		// codziennie.
-		rTrigger.Type.Daily.DaysInterval = 1;
-		break;
-
-	case freqWeekly:
-		rTrigger.TriggerType = TASK_TIME_TRIGGER_WEEKLY;
-
-		rTrigger.Type.Weekly.rgfDaysOfTheWeek =
-			GetDayOfWeekFlag(m_timeStart);
-
-		// co tydzien.
-		rTrigger.Type.Weekly.WeeksInterval = 1;
-		break;
-
-		//co miesiac.
-	case freqMonthly:
-		rTrigger.TriggerType = TASK_TIME_TRIGGER_MONTHLYDATE;
-
-		rTrigger.Type.MonthlyDate.rgfDays = 1 << (m_timeStart.wDay - 1);
-		rTrigger.Type.MonthlyDate.rgfMonths = DDS_CST_EVERYMONTH;
-		break;
-
-		DEFAULT_UNREACHABLE;
-	}
-
+	trigger.FinalizeTypeFields();
 
 	// Set the task trigger.
 	hr = RM.pITaskTrigger->SetTrigger(&trigger);
 	CheckReturnCode(hr, "Failed to set the trigger");
-
 
 	// Retrieve the PersistFile interface.
 	hr = RM.pITask->QueryInterface(IID_IPersistFile, (void **)&RM.pIPersistFile);
@@ -204,7 +149,7 @@ void TaskScheduler::CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& 
 //              ===============
 // DESCRIPTION: Throw an exception on a bad result code.
 ///////////////////////////////////////////////////////////////////////////
-void CheckReturnCode(HRESULT hr, const char* text)
+void TaskScheduler::CheckReturnCode(HRESULT hr, const char* text)
 {
 	if (FAILED(hr))
 	{
