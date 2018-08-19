@@ -19,13 +19,51 @@
 
 #include "stdafx.h"
 #include "Task.h"
+#include "TaskException.h"
 
-
-Task::Task()
-{
+void Task::SetTrigger(Trigger value) 
+{ 
+	MyTrigger = value;
 }
 
+void Task::SetProgramPath(std::string value)
+{ 
+	if (!ValidProgramPath(value))
+		throw TaskException("Invalid ProgramPath");
+	ProgramPath = value;
+}
 
-Task::~Task()
-{
+void Task::SetParameters(std::string value) 
+{ 
+	if (!ValidParameters(value))
+		throw TaskException("Invalid Parameters");
+	Parameters = value;
+}
+
+void Task::SetDirectory(std::string value) 
+{ 
+	if (!ValidDirectory(value))
+		throw TaskException("Invalid Directory");
+	StartingDir = value;
+}
+
+void Task::SetUsername(std::string value) 
+{ 
+	if (!ValidUsername(value))
+		throw TaskException("Invalid Username");
+	Username = value;
+}
+
+void Task::SetPassword(std::string value) 
+{ 
+	if (!ValidPassword(value))
+		throw TaskException("Invalid Password");
+	Password = value;
+}
+
+void Task::SetComment(std::string value) 
+{ 
+	if (!ValidComment(value))
+		throw TaskException("Invalid Comment");
+	Comment = value;
 }

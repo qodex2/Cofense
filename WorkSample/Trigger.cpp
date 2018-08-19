@@ -8,9 +8,7 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: Subclass the MSTask TASK_TRIGGER struct.  Provide two
-//				ctors to initialize the struct, either with or without
-//				an end time. A trigger type is optional.
+// DESCRIPTION: See Trigger.h
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -21,6 +19,30 @@
 
 #include "stdafx.h"
 #include "Trigger.h"
+#include <time.h>
+
+///////////////////////////////////////////////////////////////////////////
+//      METHOD: Constructor
+//              ===========
+// DESCRIPTION: Initialize the trigger with a start time of Now and a 
+//				type.  A trigger type is optional, default is once.
+///////////////////////////////////////////////////////////////////////////
+Trigger::Trigger(const TASK_TRIGGER_TYPE triggerType)
+{
+	ZeroMemory(this, sizeof(Trigger));
+
+	time_t osTime;
+	time(&osTime);  // Now
+	CTime start(osTime);
+
+	cbTriggerSize = sizeof(Trigger);
+	wBeginYear = start.GetYear();
+	wBeginMonth = start.GetMonth();
+	wBeginDay = start.GetDay();
+	wStartHour = start.GetHour();
+	wStartMinute = start.GetMinute();
+	TriggerType = triggerType;
+}
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: Constructor
@@ -28,7 +50,7 @@
 // DESCRIPTION: Initialize the trigger with a start time and a type.  A
 //				trigger type is optional, default is once.
 ///////////////////////////////////////////////////////////////////////////
-Trigger::Trigger(CTime start, TASK_TRIGGER_TYPE triggerType)
+Trigger::Trigger(const CTime start, const TASK_TRIGGER_TYPE triggerType)
 {
 	ZeroMemory(this, sizeof(Trigger));
 
@@ -47,7 +69,7 @@ Trigger::Trigger(CTime start, TASK_TRIGGER_TYPE triggerType)
 // DESCRIPTION: Initialize the trigger with a start time, an end time,
 //				and a type.  A trigger type is optional, default is once.
 ///////////////////////////////////////////////////////////////////////////
-Trigger::Trigger(CTime start, CTime end, TASK_TRIGGER_TYPE triggerType)
+Trigger::Trigger(const CTime start, const CTime end, const TASK_TRIGGER_TYPE triggerType)
 {
 	ZeroMemory(this, sizeof(Trigger));
 

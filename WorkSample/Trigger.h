@@ -8,7 +8,7 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: Subclass the MSTask TASK_TRIGGER struct.  Provide two
+// DESCRIPTION: Extend the MSTask TASK_TRIGGER struct.  Provide three
 //				ctors to initialize the struct, either with or without
 //				an end time.  A trigger type is optional.  Provide setters 
 //				for flags and trigger type.
@@ -24,13 +24,13 @@
 #include <MSTask.h>
 #include <atltime.h>
 
-class Trigger : TASK_TRIGGER
+struct Trigger : TASK_TRIGGER
 {
-public:
-	Trigger(CTime start, TASK_TRIGGER_TYPE triggerType = TASK_TIME_TRIGGER_ONCE);
-	Trigger(CTime start, CTime end, TASK_TRIGGER_TYPE triggerType = TASK_TIME_TRIGGER_ONCE);
+	Trigger(const TASK_TRIGGER_TYPE triggerType = TASK_TIME_TRIGGER_ONCE);
+	Trigger(const CTime start, const TASK_TRIGGER_TYPE triggerType = TASK_TIME_TRIGGER_ONCE);
+	Trigger(const CTime start, const CTime end, const TASK_TRIGGER_TYPE triggerType = TASK_TIME_TRIGGER_ONCE);
 	virtual ~Trigger() { }
-	void SetFlags(DWORD flags) { rgFlags = flags; }
-	void SetTriggerType(TASK_TRIGGER_TYPE triggerType) { TriggerType = triggerType; }
+	void SetFlags(const DWORD flags) { rgFlags = flags; }
+	void SetTriggerType(const TASK_TRIGGER_TYPE triggerType) { TriggerType = triggerType; }
 };
 
