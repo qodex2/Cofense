@@ -26,7 +26,6 @@ class ResourceManager
 public:
 	ResourceManager();
 	~ResourceManager();
-	void ReleaseIUnKnown() { pIUnknown->Release(); pIUnknown = NULL; }
 
 	IUnknown*       pIUnknown;
 	ITaskScheduler* pITaskScheduler;

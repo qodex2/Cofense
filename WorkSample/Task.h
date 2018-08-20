@@ -37,7 +37,7 @@ namespace Cofense
 
 		void SetDefaultTrigger();
 		void SetUuidTaskName();
-		void SetFlags();
+		void SetDefaultFlags();
 
 		void SetTrigger(Trigger value);
 		void SetTaskName(std::wstring value);
@@ -63,6 +63,6 @@ namespace Cofense
 		std::wstring Parameters;
 		std::wstring StartingDir;
 		std::wstring Comment;
-		DWORD Flags;
+		DWORD Flags = 0;
 	};
 }

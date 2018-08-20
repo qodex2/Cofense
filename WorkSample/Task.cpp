@@ -129,14 +129,15 @@ void Task::SetComment(std::wstring value)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//      METHOD: SetFlags
-//              ========
+//      METHOD: SetDefaultFlags
+//              ===============
 // DESCRIPTION: Provide a default set of flags.
 ///////////////////////////////////////////////////////////////////////////
-void Task::SetFlags()
+void Task::SetDefaultFlags()
 {
 	Flags = TASK_FLAG_DONT_START_IF_ON_BATTERIES |
-			TASK_FLAG_KILL_IF_GOING_ON_BATTERIES;
+			TASK_FLAG_KILL_IF_GOING_ON_BATTERIES |
+			TASK_FLAG_INTERACTIVE;
 }
 
 ///////////////////////////////////////////////////////////////////////////

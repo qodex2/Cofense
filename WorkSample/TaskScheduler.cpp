@@ -66,11 +66,10 @@ void TaskScheduler::Save(Task& task)
 	// Get at pointer to the ITask interface. 
 	hr = RM.pIUnknown->QueryInterface(IID_ITask, (void **)&RM.pITask);
 	CheckReturnCode(hr, "Unable to get an ITask");
-	RM.ReleaseIUnKnown();  // no longer needed
 
-	// Give the task a name.
-	hr = RM.pITask->SetApplicationName(T2COLE(task.GetTaskName().c_str()));
-	CheckReturnCode(hr, "Failed to set task name");
+	// Set the name of the application to be run.
+	hr = RM.pITask->SetApplicationName(T2COLE(task.GetProgramPath().c_str()));
+	CheckReturnCode(hr, "Failed to set application name");
 
 	// Give the task parameters if there are any.
 	if (task.GetParameters().length() > 0)
@@ -105,19 +104,6 @@ void TaskScheduler::Save(Task& task)
 	Trigger trigger = task.GetTrigger();
 	trigger.FinalizeTypeFields();
 
-
-
-	//TASK_TRIGGER Trigger;
-	//ZeroMemory(&Trigger, sizeof(TASK_TRIGGER));
-	//Trigger.cbTriggerSize = sizeof(TASK_TRIGGER);
-	//Trigger.wBeginDay = 1;
-	//Trigger.wBeginMonth = 1;
-	//Trigger.wBeginYear = 1999;
-	//hr = RM.pITaskTrigger->SetTrigger(&Trigger);
-	//CheckReturnCode(hr, "Failed to set the trigger");
-
-
-
 	// Set the task trigger.
 	hr = RM.pITaskTrigger->SetTrigger(&trigger);
 	CheckReturnCode(hr, "Failed to set the trigger");
@@ -127,7 +113,7 @@ void TaskScheduler::Save(Task& task)
 	CheckReturnCode(hr, "Failed to get the IPersistFile interface");
 
 	// Save the task.
-	hr = RM.pIPersistFile->Save(NULL, FALSE);
+	hr = RM.pIPersistFile->Save(NULL, TRUE);
 	CheckReturnCode(hr, "Failed to save the task");
 }
 

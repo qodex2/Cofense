@@ -36,12 +36,6 @@ using namespace Cofense;
 ///////////////////////////////////////////////////////////////////////////
 COMManager::COMManager()
 {
-	//initialized = false;
-	//HRESULT hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	//std::wstringstream message;
-	//message << "COM initialization failed, result: " << std::hex << hr;
-	//throw TaskException(message.str());
-
 	HRESULT hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 	if (FAILED(hr))
 	{
@@ -49,6 +43,25 @@ COMManager::COMManager()
 		message << "COM initialization failed, result: " << std::hex << hr;
 		throw TaskException(message.str());
 	}
+
+	//  Set general COM security levels.
+	hr = CoInitializeSecurity(
+		NULL,
+		-1,
+		NULL,
+		NULL,
+		RPC_C_AUTHN_LEVEL_PKT,
+		RPC_C_IMP_LEVEL_IMPERSONATE,
+		NULL,
+		0,
+		NULL);
+	if (FAILED(hr))
+	{
+		std::wstringstream message;
+		message << "COM security initialization failed, result: " << std::hex << hr;
+		throw TaskException(message.str());
+	}
+
 	initialized = true;
 }
 
