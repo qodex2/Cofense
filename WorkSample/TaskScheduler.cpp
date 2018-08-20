@@ -9,7 +9,7 @@
 //      AUTHOR: Tim Bomgardner
 //
 // DESCRIPTION: Interact with the Windows Task Scheduler to save or delete
-//				a task.  All interaction with the COM interfaces occurs
+//				a task.  Most interaction with the COM interfaces occurs
 //				here.
 //
 ///////////////////////////////////////////////////////////////////////////
