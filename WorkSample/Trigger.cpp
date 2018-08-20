@@ -24,6 +24,7 @@
 #include <time.h>
 #include "Trigger.h"
 #include "TaskException.h"
+using namespace Cofense;
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: Constructor
@@ -39,7 +40,7 @@ Trigger::Trigger(const TASK_TRIGGER_TYPE triggerType)
 	time(&osTime);  // Now
 	CTime start(osTime);
 
-	cbTriggerSize = sizeof(Trigger);
+	cbTriggerSize = sizeof(TASK_TRIGGER);
 	wBeginYear = start.GetYear();
 	wBeginMonth = start.GetMonth();
 	wBeginDay = start.GetDay();
@@ -154,7 +155,7 @@ void Trigger::SetDayOfWeek()
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: SetMonths
-//              ============
+//              =========
 // DESCRIPTION: Set the Type.MonthlyDate.rgfMonths value.
 ///////////////////////////////////////////////////////////////////////////
 void Trigger::SetMonths()

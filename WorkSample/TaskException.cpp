@@ -8,8 +8,10 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: Exception related to configuration or instantiation of
-//				a Task.  Deal with wide string issues.
+// DESCRIPTION: Just about anything that can posibly go wrong with 
+//				configuration or instantiation of a Task results in a 
+//				TaskException being thrown.  Deal with wide string issues 
+//				because std::exception is build around char*.
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -22,6 +24,7 @@
 #include <locale>
 #include <codecvt>
 #include "TaskException.h"
+using namespace Cofense;
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: Constructor

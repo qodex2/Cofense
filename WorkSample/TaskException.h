@@ -21,13 +21,15 @@
 #include <stdexcept>
 #include <string>
 
-class TaskException : public std::exception
+namespace Cofense
 {
-public:
-	TaskException(char const* const message);
-	TaskException(std::wstring message);
-	virtual ~TaskException() { }
-private:
-	std::string Convert(std::wstring message);
-};
-
+	class TaskException : public std::exception
+	{
+	public:
+		TaskException(char const* const message);
+		TaskException(std::wstring message);
+		virtual ~TaskException() { }
+	private:
+		std::string Convert(std::wstring message);
+	};
+}

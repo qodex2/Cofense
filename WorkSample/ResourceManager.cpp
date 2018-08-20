@@ -8,7 +8,8 @@
 //
 //      AUTHOR: Tim Bomgardner
 //
-// DESCRIPTION: Use RAII to manage COM Resources.
+// DESCRIPTION: Use RAII to manage COM Resources.  Anything that needs
+//				to be released is guaranteed to be released.
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -25,6 +26,7 @@
 #include <sstream>
 #include "TaskException.h"
 using namespace std;
+using namespace Cofense;
 
 ResourceManager::ResourceManager()
 {

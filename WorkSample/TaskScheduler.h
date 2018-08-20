@@ -22,12 +22,14 @@
 #include <MSTask.h>
 #include "Task.h"
 
-class TaskScheduler
+namespace Cofense
 {
-public:
-	static void Save(Task& task);
-	static void Delete(Task& task);
-	static void CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& task);
-	static void CheckReturnCode(HRESULT hr, const char* message);
-};
-
+	class TaskScheduler
+	{
+	public:
+		static void Save(Task& task);
+		static void Delete(Task& task);
+		static void CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& task);
+		static void CheckReturnCode(HRESULT hr, const char* message);
+	};
+}

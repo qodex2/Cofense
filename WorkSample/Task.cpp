@@ -9,7 +9,7 @@
 //      AUTHOR: Tim Bomgardner
 //
 // DESCRIPTION: Manage the variable used to define a task.  Options exist
-//				to create default values.
+//				to create default values.  Throws TaskException.
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -22,6 +22,7 @@
 #include "Task.h"
 #include "Trigger.h"
 #include "TaskException.h"
+using namespace Cofense;
 
 #pragma comment(lib, "Rpcrt4.lib")
 

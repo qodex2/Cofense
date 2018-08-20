@@ -26,6 +26,7 @@
 #include <sstream>
 #include "TaskException.h"
 using namespace std;
+using namespace Cofense;
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: Constructor

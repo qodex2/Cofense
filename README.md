@@ -14,8 +14,6 @@ Please write a small C++ (Windows) application that uses COM to talk to and crea
 1. Use the task scheduler
 1. Small
 ## Interpretation ##
-I can't help but wonder if this might be a "trick question".  I doubt I would be expected to know the TaskScheduler API off the top of my head, so I'd have to look it up. I'm sure you know what I'd find.  Perhaps I'm assuming too much.
-
 1. My work sample can be found here: [https://github.com/qodex2/Cofense](https://github.com/qodex2/Cofense)
 2. I interpret this to mean a solution and project created using Visual Studio.
 3. Use a COTS framework?  How about CppUnit?
@@ -24,6 +22,17 @@ I can't help but wonder if this might be a "trick question".  I doubt I would be
 6. That seems pretty straight-forward.  CoCreateInstance, etc.
 7. Any old task will do, even one that doesn't actually do anything.
 8. CLSID_CTaskScheduler, 0x148BD52A...
-9. I'm going assume you're simply looking to see if I can write reasonably clear code that deals with a C++ COM interface.  I'm going to assume you're not looking for extensive error handling and recovery, sophisticated logging, or an impressive user-friendly interface.  The links in my resume will demonstrate my skills in those areas if you're interested.
-## Strategy ##
-What are the classes in this problem domain?  Task, Trigger, and TaskScheduler seem like the obvious choices.
+9. I'm assuming you're mainly looking to see if I can write reasonably clear code that deals with a C++ COM interface.  I hope you're not looking for extensive error handling and recovery, sophisticated logging, or an impressive user-friendly interface.  This is a "sample", after all.  The links in my resume will demonstrate my skills in those areas if you're interested.
+## Key Classes ##
+**Task**.  Manage the variable used to define a task.  Options exist to create default values.  
+
+**Trigger**.  Extend the MSTask TASK_TRIGGER struct.  Provide three ctors to initialize the struct, either with or without an end time.  A trigger type is optional.  Provide setters for flags and trigger type.  
+
+**TaskScheduler**.  Interact with the Windows Task Scheduler to save or delete a task.  All interaction with the COM interfaces occurs here.
+
+**COMManager**.  Use RAII to manage COM initialization/uninitialization.
+
+**ResourceManager**.  Use RAII to manage COM Resources.  Anything that needs to be released is guaranteed to be released.
+
+**TaskException**.  Just about anything that can posibly go wrong with configuration or instantiation of a Task results in a TaskException being thrown.  Deal with wide string issues because std::exception is build around char*
+

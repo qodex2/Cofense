@@ -9,7 +9,8 @@
 //      AUTHOR: Tim Bomgardner
 //
 // DESCRIPTION: Interact with the Windows Task Scheduler to save or delete
-//				a task.
+//				a task.  All interaction with the COM interfaces occurs
+//				here.
 //
 ///////////////////////////////////////////////////////////////////////////
 // Date      By   Issue     Description
@@ -24,13 +25,16 @@
 #include "TaskScheduler.h"
 #include "ResourceManager.h"
 #include "TaskException.h"
+using namespace Cofense;
 
 #pragma comment(lib, "mstask.lib")
 
 ///////////////////////////////////////////////////////////////////////////
 //      METHOD: Save
 //              ====
-// DESCRIPTION: Gather everything and save a task as a Scheduled Task.
+// DESCRIPTION: Gather everything and save a task as a Scheduled Task.  A
+//				ResourceManager object will take care of releasing an COM
+//				resources that need to be released.
 ///////////////////////////////////////////////////////////////////////////
 void TaskScheduler::Save(Task& task)
 {
@@ -101,6 +105,19 @@ void TaskScheduler::Save(Task& task)
 	Trigger trigger = task.GetTrigger();
 	trigger.FinalizeTypeFields();
 
+
+
+	//TASK_TRIGGER Trigger;
+	//ZeroMemory(&Trigger, sizeof(TASK_TRIGGER));
+	//Trigger.cbTriggerSize = sizeof(TASK_TRIGGER);
+	//Trigger.wBeginDay = 1;
+	//Trigger.wBeginMonth = 1;
+	//Trigger.wBeginYear = 1999;
+	//hr = RM.pITaskTrigger->SetTrigger(&Trigger);
+	//CheckReturnCode(hr, "Failed to set the trigger");
+
+
+
 	// Set the task trigger.
 	hr = RM.pITaskTrigger->SetTrigger(&trigger);
 	CheckReturnCode(hr, "Failed to set the trigger");
@@ -141,7 +158,8 @@ void TaskScheduler::CheckForExistingTask(ITaskScheduler* pITaskScheduler, Task& 
 		message << "Task '" << task.GetTaskName() << "' already exists";
 		throw TaskException(message.str());
 	}
-	pIUnknown->Release();
+	if (pIUnknown != NULL) 
+		pIUnknown->Release();
 }
 
 ///////////////////////////////////////////////////////////////////////////
